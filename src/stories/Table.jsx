@@ -9,10 +9,22 @@ export const Table = ({ ...props }) => {
       <table>
         <thead>
           <tr>
-            <th className='col1'>STATUS</th>
-            <th className='col2'>DELIVERY DAY</th>
-            <th className='col3'>SUPPLIER</th>
-            <th className='col4'>TOTAL</th>
+            <th
+              className='col1'
+              onClick={() => props.sortDisplayData('orderBuyerStatus')
+              }>STATUS</th>
+            <th
+              className='col2'
+              onClick={() => props.sortDisplayData('deliveryDay')
+              }>DELIVERY DAY</th>
+            <th
+              className='col3'
+              onClick={() => props.sortDisplayData('vendorName')
+              }>SUPPLIER</th>
+            <th
+              className='col4'
+              onClick={() => props.sortDisplayData('total')
+              }>TOTAL</th>
           </tr>
         </thead>
         <tbody>
@@ -24,7 +36,7 @@ export const Table = ({ ...props }) => {
                     <span className={vendor.background}>{vendor.orderBuyerStatus}</span>
                   </td>
                   <td className='col2'>
-                    {vendor.deliveryDay ? vendor.deliveryDay : null}
+                    {vendor.formattedDeliveryDay ? vendor.formattedDeliveryDay : null}
                   </td>
                   <td className='col3'>
                     {vendor.vendorName}
