@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/notch-assignment-boris/static/css/main.996f50c5.chunk.css",
+    "main.js": "/notch-assignment-boris/static/js/main.fd281554.chunk.js",
+    "main.js.map": "/notch-assignment-boris/static/js/main.fd281554.chunk.js.map",
+    "runtime-main.js": "/notch-assignment-boris/static/js/runtime-main.c08f8d39.js",
+    "runtime-main.js.map": "/notch-assignment-boris/static/js/runtime-main.c08f8d39.js.map",
+    "static/js/2.4821678c.chunk.js": "/notch-assignment-boris/static/js/2.4821678c.chunk.js",
+    "static/js/2.4821678c.chunk.js.map": "/notch-assignment-boris/static/js/2.4821678c.chunk.js.map",
+    "static/js/3.9b6772ad.chunk.js": "/notch-assignment-boris/static/js/3.9b6772ad.chunk.js",
+    "static/js/3.9b6772ad.chunk.js.map": "/notch-assignment-boris/static/js/3.9b6772ad.chunk.js.map",
+    "index.html": "/notch-assignment-boris/index.html",
+    "static/css/main.996f50c5.chunk.css.map": "/notch-assignment-boris/static/css/main.996f50c5.chunk.css.map",
+    "static/js/2.4821678c.chunk.js.LICENSE.txt": "/notch-assignment-boris/static/js/2.4821678c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c08f8d39.js",
+    "static/js/2.4821678c.chunk.js",
+    "static/css/main.996f50c5.chunk.css",
+    "static/js/main.fd281554.chunk.js"
+  ]
+}
