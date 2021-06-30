@@ -1,0 +1,12 @@
+header {
+  background-color: $color1;
+  min-height: 50px;
+  height: 7.5vh;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 75px;
+    margin: 0 auto;
+  }
+}

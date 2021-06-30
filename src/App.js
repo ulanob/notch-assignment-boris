@@ -15,18 +15,29 @@ function App() {
   useEffect(() => {
     const apiUrl = "http://api.interview.staging.foodieorders.com/v3/orders/search";
     axios.post(apiUrl, {}).then((res) => {
-      // formatting date, totals
+      // formatting 
       res.data.data.map((el) => {
+        // total: num -> str
         if (el.total === 0) {
           el.total = null;
         } else {
           el.total = '$' + el.total.toFixed(2);
         }
 
+        // date: YYYY-MM-DD -> Mth. DD, YYYY
         if (el.deliveryDay === '') {
           el.deliveryDay = null;
         } else {
           el.deliveryDay = formatDate(el);
+        }
+
+        // adding classNames to element obj for background color
+        if (el.orderBuyerStatus === 'Paid') {
+          el.background = 'paid';
+        } else if (el.orderBuyerStatus === 'Delivered') {
+          el.background = 'delivered'
+        } else if (el.orderBuyerStatus === 'In Shopping Cart') {
+          el.background = 'cart'
         }
       });
 
