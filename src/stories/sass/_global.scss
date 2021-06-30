@@ -1,5 +1,5 @@
 // color variables
-$color1: #381279; // notch purple
+$color1: #330072; // notch purple
 $color2: #f5f5f5; // form background
 $color3: #ffffff; // main background
 $color4: #b1ddcb; // paid status background
@@ -8,9 +8,9 @@ $color6: #465853; // main text color
 $color7: #333333; // market background
 $color8: #ffea6a; // 1st background
 $color9: #989b9a; // label color
-$color10:#424242;
-$color11:#bbbbbb; //box-shadow
-$color12: #ff8d41;
+$color10:#424242; // button hover
+$color11:#bbbbbb; // box-shadow
+$color12:#ff8d41; // in shopping cart background
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 $font2: 'Noto Sans', sans-serif; //font-family
@@ -19,7 +19,6 @@ $font2: 'Noto Sans', sans-serif; //font-family
   max-width: 1800px;
   margin: 0 auto;
   width: 80%;
-  
 }
 
 html {

@@ -1,0 +1,37 @@
+@media (max-width: 850px) {
+  .wrapper {
+    width: 95%;
+  }
+
+  .formContainer select, 
+  .formContainer button{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+
+  table span {
+    margin-left: 0;
+  }
+
+  table tr {
+    height: 100px;
+  }
+  table .col1 {
+    width: 25%;
+  }
+  table .col3 {
+    width: 15%;
+    span {
+      display: block;
+      width: fit-content;
+    }
+    span:first-of-type{
+      margin-top: 5px;
+    }
+  }
+  table .col4 {
+    width: 10%;
+  }
+}

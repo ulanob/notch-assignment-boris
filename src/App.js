@@ -39,6 +39,9 @@ function App() {
         } else if (el.orderBuyerStatus === 'In Shopping Cart') {
           el.background = 'cart'
         }
+
+        // formatting vendor names (Whole River and Palette didn't render)
+        el.vendorName = el.vendorName.trim();
       });
 
       setApiData(res.data.data);
