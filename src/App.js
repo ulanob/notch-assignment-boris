@@ -15,61 +15,8 @@ function App() {
   // API Call
   useEffect(() => {
     const apiUrl = "http://api.interview.staging.foodieorders.com/v3/orders/search";
-
-    // axios with proxy?
-    //   axios({
-    //     method: 'POST',
-    //     url: 'http://proxy.hackeryou.com',
-    //     // responseType: 'json',
-    //     // params: {
-    //     //   reqUrl: apiUrl,
-    //     //   proxyHeaders: {
-    //     //     data: JSON.stringify({}),
-    //     //   },
-    //     data: JSON.stringify({}),
-    //     xmlToJSON: false
-
-    //   }).then((res) => {
-    //     res.data.data.map((el) => {
-    //       // total: num -> str
-    //       if (el.total === 0) {
-    //         el.total = null;
-    //       } else {
-    //         el.total = '$' + el.total.toFixed(2);
-    //       }
-    //       // date: YYYY-MM-DD -> Mth. DD, YYYY
-    //       if (el.deliveryDay === '') {
-    //         el.deliveryDay = null;
-    //       } else {
-    //         el.deliveryDay = formatDate(el);
-    //       }
-    //       // adding classNames to element obj for background color
-    //       if (el.orderBuyerStatus === 'Paid') {
-    //         el.background = 'paid';
-    //       } else if (el.orderBuyerStatus === 'Delivered') {
-    //         el.background = 'delivered'
-    //       } else if (el.orderBuyerStatus === 'In Shopping Cart') {
-    //         el.background = 'cart'
-    //       }
-    //       // formatting vendor names (Whole River and Palette didn't render)
-    //       el.vendorName = el.vendorName.trim();
-    //     });
-
-    //     setApiData(res.data.data);
-    //     setDisplayData(res.data.data);
-    //     setLoading(false);
-    //   }).catch((res) => {
-    //     return (
-    //       <p className="message">Could not load data: {res}</p>
-    //     )
-    //   }
-    //   )
-    // }, []);
-
-
-
-
     axios.post(apiUrl, {}).then((res) => {
+
       // formatting
       res.data.data.map((el) => {
         // total: num -> str
@@ -124,6 +71,7 @@ function App() {
     }
   }
 
+  // resets filters
   const reset = (e) => {
     e.preventDefault();
     const element = document.getElementById('formVendorList');
@@ -132,6 +80,7 @@ function App() {
     setDisplayData(apiData);
   }
 
+  // YYYY-MM-DD to MMM. DD, YYYY
   const formatDate = (el) => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     let date = new Date(el.deliveryDay)
@@ -139,6 +88,7 @@ function App() {
     return formattedStr;
   }
 
+  // sorting function for <th> onClick
   const sortDisplayData = (property) => {
     const copyArr = [...displayData].sort((a, b) => {
       if (reverse === false) {
@@ -174,3 +124,54 @@ function App() {
 }
 
 export default App;
+
+
+// axios with proxy?
+    //   axios({
+    //     method: 'POST',
+    //     url: 'http://proxy.hackeryou.com',
+    //     // responseType: 'json',
+    //     // params: {
+    //     //   reqUrl: apiUrl,
+    //     //   proxyHeaders: {
+    //     //     data: JSON.stringify({}),
+    //     //   },
+    //     data: JSON.stringify({}),
+    //     xmlToJSON: false
+
+    //   }).then((res) => {
+    //     res.data.data.map((el) => {
+    //       // total: num -> str
+    //       if (el.total === 0) {
+    //         el.total = null;
+    //       } else {
+    //         el.total = '$' + el.total.toFixed(2);
+    //       }
+    //       // date: YYYY-MM-DD -> Mth. DD, YYYY
+    //       if (el.deliveryDay === '') {
+    //         el.deliveryDay = null;
+    //       } else {
+    //         el.deliveryDay = formatDate(el);
+    //       }
+    //       // adding classNames to element obj for background color
+    //       if (el.orderBuyerStatus === 'Paid') {
+    //         el.background = 'paid';
+    //       } else if (el.orderBuyerStatus === 'Delivered') {
+    //         el.background = 'delivered'
+    //       } else if (el.orderBuyerStatus === 'In Shopping Cart') {
+    //         el.background = 'cart'
+    //       }
+    //       // formatting vendor names (Whole River and Palette didn't render)
+    //       el.vendorName = el.vendorName.trim();
+    //     });
+
+    //     setApiData(res.data.data);
+    //     setDisplayData(res.data.data);
+    //     setLoading(false);
+    //   }).catch((res) => {
+    //     return (
+    //       <p className="message">Could not load data: {res}</p>
+    //     )
+    //   }
+    //   )
+    // }, []);
